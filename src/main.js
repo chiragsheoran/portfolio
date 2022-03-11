@@ -198,7 +198,7 @@ function animate() {
   maskk.rotation.y += 0.01;
 
   chirag.rotation.y += 0.005;
-  chirag.rotation.z += 0.001;
+  //chirag.rotation.z += 0.001;
 
   controls.update();
   renderer.render(scene, camera);
