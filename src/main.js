@@ -2,7 +2,6 @@ import "./style.css";
 
 import * as THREE from "three";
 import loadGLTF from "./gltfLoader";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 const scene = new THREE.Scene();
@@ -18,7 +17,7 @@ const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#bg"),
 });
 
-loadGLTF("./models/scene.gltf", (gltf) => {
+loadGLTF("../models/scene.gltf", (gltf) => {
   scene.add(gltf.scene);
   gltf.scene.scale.set(25, 25, 25);
   gltf.scene.position.setZ(-20);
@@ -32,7 +31,7 @@ loadGLTF("./models/scene.gltf", (gltf) => {
   gltf.asset; // Object
 });
 
-loadGLTF("./models/arduino/scene.gltf", (gltf) => {
+loadGLTF("../models/arduino/scene.gltf", (gltf) => {
   scene.add(gltf.scene);
   gltf.scene.position.setZ(-40);
   gltf.animations; // Array<THREE.AnimationClip>
@@ -48,7 +47,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 renderer.render(scene, camera);
 
-const spaceTexture = new THREE.TextureLoader().load("space.jpg");
+const spaceTexture = new THREE.TextureLoader().load("../space.jpg");
 scene.background = spaceTexture;
 
 // const geometry = new THREE.TorusGeometry(10, 3, 16, 100)
@@ -81,7 +80,7 @@ function addStar() {
   scene.add(star);
 }
 
-const chiragTexture = new THREE.TextureLoader().load("cube.jpg");
+const chiragTexture = new THREE.TextureLoader().load("../cube.jpg");
 
 const chirag = new THREE.Mesh(
   new THREE.BoxGeometry(10, 10, 10),
@@ -95,7 +94,7 @@ scene.add(chirag);
 chirag.position.setZ(30);
 chirag.position.setX(-10);
 
-const maskkTexture = new THREE.TextureLoader().load("maskkmat.jpeg");
+const maskkTexture = new THREE.TextureLoader().load("../maskkmat.jpeg");
 
 const maskk = new THREE.Mesh(
   new THREE.BoxGeometry(12, 12, 12),
@@ -109,7 +108,7 @@ scene.add(maskk);
 maskk.position.setZ(-55);
 maskk.position.setX(15);
 
-const gunTexture = new THREE.TextureLoader().load("gunmatt.jpeg");
+const gunTexture = new THREE.TextureLoader().load("../gunmatt.jpeg");
 
 const gun = new THREE.Mesh(
   new THREE.BoxGeometry(15, 15, 15),
